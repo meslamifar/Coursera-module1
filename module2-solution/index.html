@@ -15,16 +15,20 @@
   <div class="row">
 
     <!-- To Buy List -->
-    <div ng-controller="ToBuyController as toBuyCtrl" class="col-md-6">
+    <div ng-controller="ToBuyController as toBuyCtrl" class="col-md-4" style="margin-right:200px">
      <h2>To Buy:</h2>
      <ul ng-repeat="item in toBuyCtrl.toBuyList">
-       <li>Buy {{item.quantity}} of {{item.name}}<button class="btn btn-default" ng-click="toBuyCtrl.updateShoppingList($index)">Bought</button></li>
-     </ul>
+       <li class="list-group-item clearfix">Buy {{item.quantity}} of {{item.name}}
+            <span class="pull-right">
+               <button class="btn btn-primary" ng-click="toBuyCtrl.updateShoppingList($index)">Bought</button>
+            </span>
+        </li>
+    </ul>
      <div ng-if="toBuyCtrl.messages.isToBuyListEmpty" class="emptyMessage">Everything is bought!</div>
     </div>
 
     <!-- Already Bought List -->
-    <div ng-controller="AlreadyBoughtController as alreadyBoughtCtrl" class="col-md-6">
+    <div ng-controller="AlreadyBoughtController as alreadyBoughtCtrl" class="col-md-4">
      <h2>Already Bought:</h2>
      <ul ng-repeat="item in alreadyBoughtCtrl.alreadyBoughtList">
        <li>Bought {{item.quantity}} of {{item.name}}</li>
