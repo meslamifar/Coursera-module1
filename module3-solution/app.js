@@ -68,8 +68,10 @@ function NarrowItDownController(MenuSearchService){
 
   ctrl.getFilterItems = function(){
 
-    if (ctrl.filterTerm == "")
+    if (ctrl.filterTerm == ""){
+      ctrl.foundItems = [];
       ctrl.errorMessage = true;
+    }
     else {
       MenuSearchService.getMatchedMenuItems(ctrl.filterTerm).then(
         function(rsp){
