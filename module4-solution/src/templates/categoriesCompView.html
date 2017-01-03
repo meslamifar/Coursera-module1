@@ -1,0 +1,11 @@
+<div style="margin-top:20px">
+  <ul ng-repeat="category in $ctrl.categories">
+    <li class="list-group-item clearfix">
+      {{category.name}}
+       <ul>
+          <li>short name: <a ui-sref="items({categoryShortName:category.short_name})">{{category.short_name}}</a></li>
+       </ul>
+    </li>
+  </ul>
+</div>
+<ui-view></ui-view>
