@@ -1,0 +1,14 @@
+<div class="container">
+<div class="group-item-list">
+  <ul ng-if="userinfoCtrl.user.registered">
+    <li>First Name: {{userinfoCtrl.user.firstname}}</li>
+    <li>Last Name: {{userinfoCtrl.user.lastname}}</li>
+    <li>Favorite Menuitem: {{userinfoCtrl.user.favoritemenuitem}}</li>
+    <li>Email Address: {{userinfoCtrl.user.emailaddress}}</li>
+    <li>Phone Number: {{userinfoCtrl.user.phonenumber}}</li>
+  </ul>
+</div>
+<span ng-if="!userinfoCtrl.user.registered">
+  Not Registered.
+</span>
+</div>
